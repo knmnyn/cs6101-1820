@@ -14,10 +14,10 @@ markdown: kramdown
 
 
 ### content configuration ###
-title:       "CS6101 - Deep Learning for NLP"
-keywords:    "CS6101, Deep Learning, NLP, Natural Language Processing, NUS"
-description: "This is a section of the CS 6101 Exploration of Computer Science Research at NUS. CS 6101 is a 4 modular credit pass/fail module for new incoming graduate programme students to obtain background in an area with an instructor's support. It is designed as a lab rotation to familiarize students with the methods and ways of research in a particular research area.  This semester's them will be Natural Language Processing using Deep Learning"
-source_link: "http://www.comp.nus.edu.sg/~kanmy/courses/6101_1810"
+title:       "CS6101 - Deep Reinforcement Learning"
+keywords:    "CS6101, Deep Learning, Reinforcement Learning, RL, Games, Deep RL, Deep Reinforcement Learning, NUS"
+description: "This is a section of the CS 6101 Exploration of Computer Science Research at NUS. CS 6101 is a 4 modular credit pass/fail module for new incoming graduate programme students to obtain background in an area with an instructor's support. It is designed as a lab rotation to familiarize students with the methods and ways of research in a particular research area.  This semester's them will be on Deep Reinforcement Learning"
+source_link: "http://www.comp.nus.edu.sg/~kanmy/courses/6101_1820"
 favicon:     "img/favicon.ico"
 touch_icon:  "img/apple-touch-icon.png"
 google_analytics_key: 
