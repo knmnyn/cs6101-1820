@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CS6101 - Deep Learning for NLP</title>
+	<meta name="keywords" content="CS6101, Deep Learning, NLP, Natural Language Processing, NUS">
+	<meta name="description" content="This is a section of the CS 6101 Exploration of Computer Science Research at NUS. CS 6101 is a 4 modular credit pass/fail module for new incoming graduate programme students to obtain background in an area with an instructor's support. It is designed as a lab rotation to familiarize students with the methods and ways of research in a particular research area.  This semester's them will be Natural Language Processing using Deep Learning">
+  <link rel="stylesheet" href="combo.css">
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+</head>
+<body>
+  <div id="main">
+
+    <nav><ul>
+      
+        
+        <li class="p-intro"><a href="#intro">CS6101</a></li>
+      
+        
+        <li class="p-details"><a href="#details">Details</a></li>
+      
+        
+        <li class="p-schedule"><a href="#schedule">Schedule</a></li>
+      
+        
+        <li class="p-projects"><a href="#projects">Projects</a></li>
+      
+        
+        <li class="p-links"><a href="#links">Other Links</a></li>
+      
+    </ul></nav>
+
+
+    
+      
+      <div id="intro" class="section p-intro">
+        
+        <div class="container ">
+          <div>
+<img src="img/tinkertoy.png" class="img-fluid" style="float:left" height="150" width="150" /><p style="text-align:center; float:right"><h1>Deep Learning for NLP</h1><p style="text-align:center">NUS SoC, <b>2018/2019</b>, Semester I<br />CS 6101 - Exploration of Computer Science Research</p></p>
+</div>
+
+<p><br clear="both" /></p>
+
+<p>This course is taken almost verbatim from <a href="https://web.stanford.edu/class/cs224n">CS 224N Deep Learning for Natural Language Processing</a> – <a href="http://socher.org">Richard Socher</a>’s course at Stanford. We are following their course’s formulation and selection of papers, with the permission of Socher.</p>
+
+<p>This is a section of the CS 6101 Exploration of Computer Science Research at NUS. CS 6101 is a 4 modular credit pass/fail module for new incoming graduate programme students to obtain background in an area with an instructor’s support. It is designed as a “lab rotation” to familiarize students with the methods and ways of research in a particular research area.</p>
+
+<p>Our section will be conducted as a group seminar, with class participants nominating themselves and presenting the materials and leading the discussion. It is not a lecture-oriented course and not as in-depth as Socher’s original course at Stanford, and hence is not a replacement, but rather a class to spur local interest in Deep Learning for NLP.</p>
+
+<p>This course is offered twice, for Session I (Weeks 3-7) and Session II (Weeks 8-13), although it is clear that the course is logically a single course that builds on the first half.  Nevertheless, the material should be introductory and should be understandable given some prior study.</p>
+
+<p><i class="fa fa-comments"></i>
+<a href="http://cs6101.slack.com/">A discussion group is on Slack</a>. Students and guests, please login when you are free. If you have a @comp.nus.edu.sg, @u.nus.edu, @nus.edu.sg, @a-star.edu.sg, @dsi.a-star.edu.sg or @i2r.a-star.edu.sg. email address you can create your Slack account for the group discussion without needing an invite.</p>
+
+<p><i class="fa fa-edit"></i>
+<strong>For interested public participants</strong>, please send Min an email at <code>kanmy@comp.nus.edu.sg</code> if you need an invite to the Slack group.  The Slack group is being reused from previous semesters.  Once you are in the Slack group, you can consider yourself registered.</p>
+
+
+        </div>
+      </div>
+    
+      
+      <div id="details" class="section p-details">
+        
+        <div class="subtlecircle sectiondivider faicon">
+          <span class="fa-stack">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-check-square-o fa-stack-1x"></i>
+          </span>
+          <h5 class="icon-title">Details</h5>
+        </div>
+        
+        <div class="container ">
+          <h2>Registration FAQ</h2>
+
+<ul>
+  <li><strong>What are the pre-requisites?</strong> There are no formal prerequisites for the course.  As with many machine learning courses, it would be useful to have basic understanding of linear algebra in probability and statistics.  Taking online, open courses on these subjects concurrently or before the course would be advisable if you do not have to requisite understanding.</li>
+  <li><strong>Is the course chargeable?</strong> <strong>No,</strong> the course is not chargeable.  It is free (as in no-fee).  NUS allows us to teach this course for free, as it is not “taught”, <em>per se</em>.  Students in the class take charge of the lectures, and complete a project, while the teaching staff facilitates the experience.</li>
+  <li>
+    <p><strong>Can I get course credit for taking this?</strong> <strong>Yes,</strong> if you are a first-year School of Compu
+ting doctoral student.  In this case you need to formally enroll in the course as CS6101, And you will receive one half of the 4-MC pass/fail credit that you would receive for the course, which is a lab rotation course.  Even though the left rotation is only for half the semester, such students are encouraged and welcome to complete the entire course.</p>
+
+    <p><strong>No,</strong>  for everyone else.  By this we mean that no credits, certificate, or any other formal documentation for completing the course will be given to any other participants, inclusive of external registrants and NUS students (both internal and external to the School of Computing).  Such participants get the experience of learning deep learning together in a formal study group in developing the camaraderie and network from fellow peer students and the teaching staff.</p>
+  </li>
+  <li><strong>What are the requirements for completing the course?</strong> Each student must achieve 2 objectives  to be deemed to have completed the course:
+    <ul>
+      <li>Work with peers to assist in teaching two lecture sessions of the course: One lecture by co-lecturing the subject from new slides that you have prepared a team; and another lecture by moderating of the Slack channel to add materials for discussion.</li>
+      <li>Complete a deep learning project. For the project, you only need to use any deep learning framework to execute a problem against a data set.  You may choose to replicate previous work orders in scientific papers or data science challenges. Or more challengingly, you may decide to use data from your own context.</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>How do external participants take this course?</strong> You may come to
+  NUS to participate in the lecture concurrently with all of our
+  local participants.  You are also welcome to participate online
+  through Google Hangouts.  We typically have a synchronous
+  broadcast to Google Hangouts that is streamed and archived to
+  YouTube.</p>
+
+    <p>During the session where you’re responsible for co-lecturing, you
+  will be expected to come to the class in person.</p>
+
+    <p>As an external participant, you are obligated to complete the
+  course to best your ability.  We do not encourage students who are
+  not committed to completing the course to enrol.</p>
+  </li>
+</ul>
+
+<h2>Meeting Venue and Time</h2>
+
+<ul>
+  <li>for Session I (Weeks 3-7): 18:00-20:00, Thursdays, at Seminar Room @ Lecture Theatre 19 (SR@LT19).</li>
+  <li>for Session II (Weeks 8-13): 18:00-20:00, Thursdays, at Seminar Room @ Lecture Theatre 19 (SR@LT19).</li>
+</ul>
+
+<p>For directions to NUS School of Computing (SoC) and COM1: please read <a href="http://www.comp.nus.edu.sg/maps/getting-here/">the directions here</a>, to park in CP13 and/or take the bus to SoC. and use <a href="http://www.comp.nus.edu.sg/images/resources/content/mapsvenues/COM1_L1.jpg">the floorplan</a> to find SR@LT19.</p>
+
+<p>Please eat before the course or during (we don’t mind – like a brown-bag-seminar series), and if you’re parked, you will be able to leave after 7:30pm without paying carpark charges.</p>
+
+<h2>People</h2>
+
+<p>Welcome. If you are an external visitor and would like to join us, please email Kan Min-Yen to be added to the class role. Guests from industry, schools and other far-reaching places in SG welcome, pending space and time logistic limitations. The more, the merrier.</p>
+
+<p>External guests will be listed here in due course once the course has started. Please refer to our Slack after you have been invited for the most up-to-date information.</p>
+
+<p><strong>NUS (Postgraduate)</strong>: Session I (Weeks 3-7): <a href="https://www.linkedin.com/in/juncheng-liu/">Liu Juncheng</a> and 6 other anonymous students.</p>
+
+<p><strong>NUS (Postgraduate)</strong>: Session II (Weeks 8-13): 4 anonymous students.</p>
+
+<p><strong>NUS (Undergraduate, Cross-Faculty and Alumni)</strong>: 
+<a href="https://www.linkedin.com/in/takanori-aoki-7900a438/">Takanori Aoki</a>,
+<a href="https://www.linkedin.com/in/daniel-biro/">Daniel Biro</a>,
+<a href="https://github.com/balaprasanna">Bala</a>,
+<a href="http://www.divakar.co">Divakar Sivashankar</a>,
+<a href="www.linkedin.com/in/preethi-mohan-rao">Preethi Mohan Rao</a>,
+<a href="https://www.linkedin.com/in/louistranthanhquang/">Louis Tran</a>,
+Luong Quoc Trung</p>
+
+<p><strong><a href="http://wing.comp.nus.edu.sg">WING</a></strong>:
+<a href="http://www.comp.nus.edu.sg/~kanmy/">Kan Min-Yen</a>,
+<a href="https://github.com/kylase">Kee Yuan Chuan</a></p>
+
+<p><strong>Guests</strong>:
+Chia Keat Loong,
+<a href="https://www.linkedin.com/in/mfchiang/">Meng-Fen Chiang</a>,
+<a href="https://www.linkedin.com/in/theodorosgalanos/">Theodore Galanos</a>,
+Gary Goh,
+<a href="https://github.com/Neoanarika">Ang Ming Liang</a>,
+<a href="https://www.linkedin.com/in/jordan-liew">Jordan Liew</a>,
+<a href="https://github.com/howkhang/cs224n/">Lim How Khang</a>,
+<a href="https://www.linkedin.com/in/wuqiong-luo">Luo Wuqiong (Nick)</a>,
+Mirco Milletari,
+<a href="https://www.linkedin.com/in/jet-new/">New Jun Jie (Jet)</a>,
+<a href="https://www.linkedin.com/in/dean-pham-37bba5139/">Pham Nguyen Khoi</a>,
+Si Chenglei,
+<a href="https://www.linkedin.com/in/praveen-sanap-48208951/">Praveen Sanap</a>,
+<a href="https://www.linkedin.com/in/yeshasimaria/">Yesha Simaria</a>,
+Tek Yong Jian,
+<a href="https://www.linkedin.com/in/xiao-nan/">Xiao Nan</a></p>
+
+        </div>
+      </div>
+    
+      
+      <div id="schedule" class="section p-schedule">
+        
+        <div class="subtlecircle sectiondivider faicon">
+          <span class="fa-stack">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-calendar fa-stack-1x"></i>
+          </span>
+          <h5 class="icon-title">Schedule</h5>
+        </div>
+        
+        <div class="container ">
+          <h2>Schedule</h2>
+
+<table class="table table-striped">
+<thead class="thead-inverse"><tr><th>Date</th><th>Description</th><th>Deadlines</th></tr></thead>
+<tbody>
+<tr>
+  <td><b>Preflight</b><br />Week of 13, 20 Aug
+  </td>
+  <td><strong><a href="http://web.stanford.edu/class/cs224n/lectures/lecture1.pdf">Introduction to NLP and Deep Learning</a>,
+ <a href="http://web.stanford.edu/class/cs224n/lectures/lecture2.pdf">Word Vectors 1</a>, &amp;
+<a href="http://web.stanford.edu/class/cs224n/lectures/lecture3.pdf">Word Vectors 2</a></strong>
+  </td>
+  <td>
+  </td>
+</tr>
+<tr>
+  <td><b>Week 3</b><br />30 Aug
+  </td>
+  <td><strong><a href="http://web.stanford.edu/class/cs224n/lectures/lecture4.pdf">Neural Networks</a>, <a href="h
+ttp://web.stanford.edu/class/cs224n/lectures/lecture5.pdf">Backpropagation</a></strong>
+<br />
+[&nbsp;»&nbsp;<a href="#" data-toggle="#div3">Recording @ YouTube</a>&nbsp;]
+<div id="div3" style="display:none">
+<iframe width="700" height="500" src="https://www.youtube.com/embed/-MEt9Y4idpU?ecver=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+</div>
+  </td>
+  <td>
+  </td>
+</tr>
+<tr>
+  <td><b>Week 4</b><br />6 Sep
+  </td>
+  <td><strong><a href="http://web.stanford.edu/class/cs224n/lectures/lecture7.pdf">Dependency Parsing</a></strong>
+<br />
+[&nbsp;»&nbsp;<a href="w4-dependency-parsing.pdf">Presenters'&nbsp;Slides&nbsp;(.pdf)</a>&nbsp;]
+[&nbsp;»&nbsp;<a href="w4-summary.pdf">Summary&nbsp;(.pdf)</a>&nbsp;]
+</td>
+&lt;/td&gt;
+  <td>
+  </td>
+</tr>
+<tr>
+  <td><b>Week 5</b><br />13 Sep
+  </td>
+  <td><strong><a href="http://web.stanford.edu/class/cs224n/lectures/lecture8.pdf">Recurrent Neural Networks and Language Models</a></strong>
+<br />
+[&nbsp;»&nbsp;<a href="w5-rnn-lm.pdf">Presenters'&nbsp;Slides&nbsp;(.pdf)</a>&nbsp;]
+[&nbsp;»&nbsp;<a href="w5-summary.pdf">Summary&nbsp;(.pdf)</a>&nbsp;]
+[&nbsp;»&nbsp;<a href="#" data-toggle="#div5">Recording @ YouTube</a>&nbsp;]
+<div id="div5" style="display:none">
+  <iframe width="700" height="500" src="https://www.youtube.com/embed/LkGrnEpdtLU?ecver=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+</div> 
+
+  </td>
+  <td>
+  </td>
+</tr>
+<tr>
+  <td><b>Week 6</b><br />20 Sep
+  </td>
+  <td><strong><a href="http://web.stanford.edu/class/cs224n/lectures/lecture9.pdf">Vanishing Gradients, Fancy RNNs</a></strong>
+<br />
+[&nbsp;»&nbsp;<a href="w6-vanish-lstm-gru.pdf">Presenters'&nbsp;Slides&nbsp;(.pdf)</a>&nbsp;]
+[&nbsp;»&nbsp;<a href="w6-summary.pdf">Summary&nbsp;(.pdf)</a>&nbsp;]
+[&nbsp;»&nbsp;<a href="#" data-toggle="#div6">Recording @ YouTube</a>&nbsp;]
+<div id="div6" style="display:none">
+  <iframe width="700" height="500" src="https://www.youtube.com/embed/dH-slVoZMKk?ecver=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+</div> 
+  </td>
+  <td>Preliminary project titles and team members due on Slack's <code>#projects</code>
+  </td>
+</tr>
+<tr>
+  <td><b>Recess Week</b><br />27 Sep
+  </td>
+  <td><strong><a href="http://web.stanford.edu/class/cs224n/lectures/lecture10.pdf">Machine Translation, Seq2Seq and Attention</a></strong>
+<br />
+[&nbsp;»&nbsp;<a href="wrecess-mt-seq2seq.pdf">Presenters'&nbsp;Slides&nbsp;(.pdf)</a>&nbsp;]
+[&nbsp;»&nbsp;<a href="#" data-toggle="#div7">Recording @ YouTube</a>&nbsp;]
+<div id="div7" style="display:none">
+  <iframe width="700" height="500" src="https://www.youtube.com/embed/cTkZNmnla7c?ecver=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+</div> 
+  </td>
+  <td>
+  </td>
+</tr>
+<tr>
+  <td><b>Week 7</b><br />4 Oct
+  </td>
+  <td><strong><a href="http://web.stanford.edu/class/cs224n/lectures/lecture11.pdf">Advanced Attention</a></strong>
+<br />
+[&nbsp;»&nbsp;<a href="w7-attention.pdf">Presenters'&nbsp;Slides&nbsp;(.pdf)</a>&nbsp;]
+[&nbsp;»&nbsp;<a href="w7-summary.pdf">Summary&nbsp;(.pdf)</a>&nbsp;]
+[&nbsp;»&nbsp;<a href="#" data-toggle="#div8">Recording @ YouTube</a>&nbsp;]
+<div id="div8" style="display:none">
+  <iframe width="700" height="500" src="https://www.youtube.com/embed/3S431ZCuhR4?ecver=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+</div> 
+  </td>
+  <td>Preliminary abstracts due to <code>#projects</code>
+  </td>
+</tr>
+<tr>
+  <td><b>Week 8</b><br />11 Oct
+  </td>
+  <td><strong><a href="http://web.stanford.edu/class/cs224n/lectures/lecture12.pdf">Transformer Networks and CNNs</a></strong>
+<br />
+[&nbsp;»&nbsp;<a href="w8-transformer.pdf">Presenters'&nbsp;Slides&nbsp;(.pdf)</a>&nbsp;]
+[&nbsp;»&nbsp;<a href="w8-summary.pdf">Summary&nbsp;(.pdf)</a>&nbsp;]
+[&nbsp;»&nbsp;<a href="https://hackmd.io/s3GqA6aHSKS2i53VJA1opQ?view">Summary&nbsp;(via HackMD)</a>&nbsp;]
+[&nbsp;»&nbsp;<a href="#" data-toggle="#div9">Recording @ YouTube</a>&nbsp;]
+<div id="div9" style="display:none">
+  <iframe width="700" height="500" src="https://www.youtube.com/embed/yCdl2afW88k?ecver=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+</div> 
+  </td>
+  <td>
+  </td>
+</tr>
+<tr>
+  <td><b>Week 9</b><br />18 Oct
+  </td>
+  <td><strong><a href="http://web.stanford.edu/class/cs224n/lectures/lecture13.pdf">Coreference Resolution</a> </strong>
+<br />
+[&nbsp;»&nbsp;<a href="w9-coref.pdf">Presenters'&nbsp;Slides&nbsp;(.pdf)</a>&nbsp;]
+[&nbsp;»&nbsp;<a href="w9-summary.pdf">Summary&nbsp;(.pdf)</a>&nbsp;]
+[&nbsp;»&nbsp;<a href="#" data-toggle="#div10">Recording @ YouTube</a>&nbsp;]
+<div id="div10" style="display:none">
+  <iframe width="700" height="500" src="https://www.youtube.com/embed/nS-MZVO9kcs?ecver=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+</div> 
+  </td>
+  <td>
+  </td>
+</tr>
+<tr>
+  <td><b>Week 10</b><br />25 Oct
+  </td>
+  <td><strong><a href="http://web.stanford.edu/class/cs224n/lectures/lecture14.pdf">Tree Recursive Neural Networks and Constituency Parsing</a></strong><br />
+[&nbsp;»&nbsp;<a href="w10-c-parsing.pdf">Presenters'&nbsp;Slides&nbsp;(.pdf)</a>&nbsp;]
+[&nbsp;»&nbsp;<a href="w10-summary.pdf">Summary&nbsp;(.pdf)</a>&nbsp;]
+[&nbsp;»&nbsp;<a href="#" data-toggle="#div11">Recording @ YouTube</a>&nbsp;]
+<div id="div11" style="display:none">
+  <iframe width="700" height="500" src="https://www.youtube.com/embed/jGR7Y4kMr1k?ecver=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+</div> 
+  </td>
+  <td>
+  </td>
+</tr>
+<tr>
+  <td><b>Week 11</b><br />1 Nov
+  </td>
+  <td><strong><a href="http://web.stanford.edu/class/cs224n/lectures/lecture15.pdf">Advanced Architectures and Memory Networks</a></strong>
+<br />
+[&nbsp;»&nbsp;<a href="w11-memnets.pdf">Presenters'&nbsp;Slides&nbsp;(.pdf)</a>&nbsp;]
+[&nbsp;»&nbsp;<a href="w11-summary.pdf">Summary&nbsp;(.pdf)</a>&nbsp;]
+[&nbsp;»&nbsp;<a href="#" data-toggle="#div12">Recording @ YouTube</a>&nbsp;]
+<div id="div12" style="display:none">
+  <iframe width="700" height="500" src="https://www.youtube.com/embed/w5_Ksl6LNQc?ecver=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+</div> 
+</td>
+  <td>
+  </td>
+</tr>
+<tr>
+  <td><b>Week 12</b><br />8 Nov
+  </td>
+  <td><strong><a href="http://web.stanford.edu/class/cs224n/lectures/lecture16-guest.pdf">Reinforcement Learning for NLP</a></strong><br />
+[&nbsp;»&nbsp;<a href="w12-rlnlp.pdf">Presenters'&nbsp;Slides&nbsp;(.pdf)</a>&nbsp;]
+  </td>
+  <td>
+  </td>
+</tr>
+<tr>
+  <td><b>Week 13</b><br />15 Nov
+  </td>
+  <td><strong><a href="http://web.stanford.edu/class/cs224n/lectures/lecture17.pdf">Semi-supervised Learning for NLP</a></strong><br />
+[&nbsp;»&nbsp;<a href="#" data-toggle="#div14">Recording @ YouTube</a>&nbsp;]
+<div id="div14" style="display:none">
+  <iframe width="700" height="500" src="https://www.youtube.com/embed/OTkCy5ziMEk?ecver=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+</div> 
+  </td>
+  <td>Participation on evening of 13th STePS
+  </td>
+</tr>
+</tbody></table>
+
+
+        </div>
+      </div>
+    
+      
+      <div id="projects" class="section p-projects">
+        
+        <div class="subtlecircle sectiondivider faicon">
+          <span class="fa-stack">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-bar-chart fa-stack-1x"></i>
+          </span>
+          <h5 class="icon-title">Projects</h5>
+        </div>
+        
+        <div class="container ">
+          <h2>Student Projects</h2>
+
+<ol>
+  <li>
+    <p><strong>Abstractive Summarisation of Long Academic Papers</strong> by <em>Si Chenglei</em>, <em>Biro Daniel</em></p>
+
+    <p><a href="img/proj-01.jpg"><img src="img/proj-01.s.jpg" class="img-fluid" style="float:left;padding:5px" width="150" /></a>In this project, we use two publicly available datasets to train abstractive summarisation models for long academic papers which are usually 2000 to 3000 words long. We will generate a summary of around 250 words for the papers. We also evaluate different models’ performance.<br clear="both" /></p>
+  </li>
+  <li>
+    <p><strong>CNN for Japanese Text Classification</strong> by <em>Takanori Aoki</em></p>
+
+    <p><a href="img/proj-02.jpg"><img src="img/proj-02.s.jpg" class="img-fluid" style="float:left;padding:5px" width="150" /></a>I developed Japanese text classifier to identify an author of a novel by using Character-Level Convoltional Neural Network (CLCNN). CLCNN realizes robust Japanese text classification. In usual way of Japanese text classification, we need to do word segmentation because there is no white space between words in Japanese language. However, CLCNN is applicable without word segmentation. In addition, CLCNN is very robust against typos and misspelling. Results of experimentation will be displayed in STePS.<br clear="both" /></p>
+  </li>
+  <li>
+    <p><strong>Foreign Exchange Forecasting</strong> by <em>Xiao Nan</em>, <em>Luo Wuqiong (Nick)</em>, <em>Yesha Simaria</em>, <em>Vikash Ranjan</em></p>
+
+    <p><i class="fa fa-trophy"></i>Award Winner, 2nd Prize<i class="fa fa-trophy"></i></p>
+
+    <p><a href="img/proj-03.jpg"><img src="img/proj-03.s.jpg" class="img-fluid" style="float:left;padding:5px" width="150" /></a>This project explored forecasting foreign currency exchange price using both historical price data and market news of the trading pair. We first built a market sentiment classifier to obtain daily market sentiment score from market news of the trading pair. To reduce the amount of labelled training data required, we used transfer learning technique by first training a language model using Wikipedia data, then fine-tuning the language model using market news, and finally using the language model as the basis to train the market sentiment classifier. We then combined the market sentiment score and historical price data and fed them in an end-to-end encoder-decoder recurrent neural network (RNN) to forecast foreign exchange trends.<br clear="both" /></p>
+  </li>
+  <li>
+    <p><strong>Gaining Insight from News Articles for Stock Prediction</strong> by <em>Rahul Rajesh</em></p>
+
+    <p><i class="fa fa-trophy"></i>Award Winner, 1st Prize<i class="fa fa-trophy"></i></p>
+
+    <p>(<em>No poster available, sorry!</em>) Stock market prediction has been an active area of research for a long time. The Efficient Market Hypothesis (EMH) states that stock market prices are largely driven by new information and follow a random walk pattern.  In this study, we test a hypothesis based on the premise of behavioral economics, that the emotions and moods of individuals affect their decision making process, thus, leading to a direct correlation between “public sentiment” and “market sentiment”. We specially look to see if there is any correlation between what people post on twitter and the movement of prices in the stock market. Based off recent happenings in the news, this study is focused on Tesla.<br clear="both" /></p>
+  </li>
+  <li>
+    <p><strong>MC NLP Rap Lyrics Generator</strong> by <em>Zhou Yizhuo</em></p>
+
+    <p><i class="fa fa-trophy"></i>Award Winner, 3rd Prize<i class="fa fa-trophy"></i></p>
+
+    <p><a href="img/proj-05.png"><img src="img/proj-05.s.png" class="img-fluid" style="float:left;padding:5px" width="150" /></a> Natural language generation is an NLP task which has drawn attention widely in recent years. Besides commercial NLG technology such as chatbot, generating literary works is another interesting application. Some work has been done on writing Shakespeare’s poem and generating paragraph with Harry Potter’s style. As a rap lover, I believe that generating rap lyrics is much more realistic since some rap lyrics written by human are not meaningful. In this project, I start from training a character-level language model using LSTM based on Eminem’s songs’ lyrics dataset which contains around 50000 lines of lyrics. Then I will explore word-level model to examine the new generator’s performance. The ultimate goal of this project is generating several lines of rap lyrics which might be identified as human’s works by testers.<br clear="both" /></p>
+  </li>
+  <li>
+    <p><strong>Open Source Software Vulnerability Identification With Machine Learning</strong> by <em>Chen Yang</em></p>
+
+    <p>(<em>No poster available, sorry!</em>) There are different data sources we can identify vulnerabilities for open source software. One is the text information from Github issue, Bugzilla , Jira tickets, emails, another is the commit patch. We use traditional machine learning algorithms to identify vulnerability from above source already. Deep learning is used to to identify commits message in this project to compare the result with traditional algorithms. It shows deep learning can get better result even with less features.<br clear="both" /></p>
+  </li>
+  <li>
+    <p><strong>Reading Comprehension with Lecture Notes</strong> by <em>Nguyen Van Hoang</em>, <em>Lee Pei Xuan</em>, <em>Kevin Leonardo</em>, <em>Calvin Tantio</em>, <em>Luong Quoc Trung</em>, <em>Tan Joon Kai Daniel</em></p>
+
+    <p><a href="img/proj-07.jpg"><img src="img/proj-07.s.jpg" class="img-fluid" style="float:left;padding:5px" width="150" /></a>This project explores the application of open-domain Question Answering (QA) in learning materials with a contribution of a lecture note dataset, called LNQA, annotated with question-answer pairs. Our approach is to improve the overall pipeline of lecture note reading comprehension involving context retrieving (finding the relevant slides) and text reading (identifying the correct information). Experiments show that initializing our text reader model with a pre-trained version on SQuAD significantly improve its performance on much limited lecture note dataset, comparing with both training from scratch and inferring from the pre-trained model. Narrowing down the search space by specifying departments of questions also helps improve document retriever results, thus we examine state-of-the-art sentence classifiers in predicting departments of questions.<br clear="both" /></p>
+  </li>
+  <li>
+    <p><strong>Beyond Affine Neurons</strong> by <em>Mirco Milletari</em>, <em>Mohit Rajpal</em></p>
+
+    <p><a href="img/proj-08.jpg"><img src="img/proj-08.s.jpg" class="img-fluid" style="float:left;padding:5px" width="150" /></a>Recurrent Neural Networks (RNNs) have emerged as one of the most successful framework for time series prediction and natural language processing. However, the fundamental building block of RNNs, the perceptron [1], has remained largely unchanged since its inception: a nonlinearity applied to an affine function. An affine function cannot easily capture the complex behavior of functions of degree 2 and higher. The sum of products signal propagation for the hidden state and current input incorrectly assumes that these two variables are independent and uncoupled. RNNs are increasingly forced to use very large number of neurons in complex architectures to achieve good results. In this project, inspired by Ref. [2], we propose to add simple and efficient degree 2 behavior to Recurrent Neural Network (RNN) neuron cells to improve the expressive power of each individual neuron. We analyze the benefits of our approach with respect to common language prediction tasks. The clear advantage of our approach is fewer neurons and therefore reduced computational complexity and cost. [1] Rosenblatt, Frank. The perceptron, a perceiving and recognizing automaton Project Para. Cornell Aeronautical Laboratory, 1957. [2] Mirco Milletari, Thiparat Chotibut and Paolo E. Trevisanutto. Expectation propagation: a probabilistic view of Deep Feed Forward Networks, arXiv:1805.08786, (2018)<br clear="both" /></p>
+  </li>
+  <li>
+    <p><strong>CNN-RNN for Image Annotation with Label Correlations</strong> by <em>Xiao Junbin</em>, <em>Hu Zikun</em>, <em>Lim Joo Gek</em>, <em>Tan Kay Pong</em></p>
+
+    <p><a href="img/proj-09.jpg"><img src="img/proj-09.s.jpg" class="img-fluid" style="float:left;padding:5px" width="150" /></a>Convolutional Neural Networks (CNNs) have shown great success in image recognition where one image belongs to only one category (label), whereas in multi-label prediction, their performances are suboptimal mainly for their neglection of the label correlations. Recurrent Neural Networks (RNNs) are superior in capturing label relationships, such as label dependency and semantic redundancy. Hence, in this project we implement a CNN-RNN framework for multi-label image annotation by exploiting CNN’s capability for image-to-label recognition and RNN’s complement in label-to-label inference. We experiment on the popular benchmark IAPRTC12 to show that CNN-RNN can help improve the performance on the CNN baseline.<br clear="both" /></p>
+  </li>
+  <li>
+    <p><strong>Reading Wikipedia to Answer Open-Domain Questions</strong> by <em>Nguyen Ngoc Tram Anh</em>, <em>Louis Tran</em>, <em>Jet New</em>, <em>Leong Kwok Hing</em>, <em>Tran Minh Hoang</em></p>
+
+    <p><a href="img/proj-10.jpg"><img src="img/proj-10.s.jpg" class="img-fluid" style="float:left;padding:5px" width="150" /></a> <em>no abstract submitted</em>.  Original Author: Danqi Chen, Adam Fisch, Jason Weston and Antoine Bordes.<br clear="both" /></p>
+  </li>
+  <li>
+    <p><strong>Source Code Comment Generation</strong> by <em>Praveen Sanap</em></p>
+
+    <p><a href="img/proj-11.jpg"><img src="img/proj-11.s.jpg" class="img-fluid" style="float:left;padding:5px" width="150" /></a>The number of high quality, well documented, open sources projects has only increased.  I propose that, with the advances in NLP, a deep learning model can learn to make comments for a source code from such data.<br clear="both" /></p>
+  </li>
+  <li>
+    <p><strong>Axiomatic attribution for neural translation</strong> by <em>Ang Ming Liang</em>, <em>Ang Chew Hoe</em></p>
+
+    <p><a href="img/proj-12.jpg"><img src="img/proj-12.s.jpg" class="img-fluid" style="float:left;padding:5px" width="150" /></a>The recent success of Neural Machine Translators (NMT), have shown the power of using neural approaches to the problem of machine translation.  Nonetheless, one of the biggest problems if NMT and deep learning models in general is their lack of interpretability.  In light of this, this projects aims to “unbox” the black box of widely use NMT models using the axiomatic attribution framework proposed by M Sundarajan et al 2017.</p>
+  </li>
+  <li>
+    <p><strong>Legal Text Classifier with Universal Language Model Fine-tuning</strong> by <em>Lim How Khang</em></p>
+
+    <p><a href="img/proj-13.jpg"><img src="img/proj-13.s.jpg" class="img-fluid" style="float:left;padding:5px" width="150" /></a>Recent work has shown that pre-training a neural language model on large public text datasets improves the accuracy of a neural text classifier while requiring fewer labelled training samples.  We use the Universal Language Model Fine-tuning method introduced by Howard and Ruder (2018)* to train a legal text classifier to perform 19-way legal topic classification on a dataset of 3,588 legal judgments issued by the Singapore Court of Appeal and High Court.</p>
+  </li>
+</ol>
+
+
+        </div>
+      </div>
+    
+      
+      <div id="links" class="section p-links">
+        
+        <div class="subtlecircle sectiondivider faicon">
+          <span class="fa-stack">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-plug fa-stack-1x"></i>
+          </span>
+          <h5 class="icon-title">Other Links</h5>
+        </div>
+        
+        <div class="container ">
+          <ul>
+  <li><strong>Deep Learning for NLP using Python</strong> (Git Repo) - <a href="https://github.com/rouseguy/europython2016_dl-nlp">https://github.com/rouseguy/europython2016_dl-nlp</a></li>
+  <li><em>Deep Learning</em>, an MIT Press book, by Ian Goodfellow, Yoshua Bengio and Aaron Courville - <a href="http://www.deeplearningbook.org/">http://www.deeplearningbook.org/</a></li>
+  <li><strong>Neural Networks and Deep Learning</strong> - free e-book by Michael A. Nielsen - <a href="http://neuralnetworksanddeeplearning.com/">http://neuralnetworksanddeeplearning.com/</a></li>
+  <li><strong>Fast.AI website</strong> - <a href="[http://www.fast.ai/">http://www.fast.ai/</a></li>
+  <li><strong>Fast.AI Discourse Forums</strong> - (http://forums.fast.ai/)</li>
+  <li><strong>AI Saturdays in Singapore</strong>, sponsored by SG Innovate - <a href="https://sginnovate.com/events/ai-saturdays">https://sginnovate.com/events/ai-saturdays</a></li>
+</ul>
+
+<p>Previous CS6101 versions run by Min:</p>
+
+<ul>
+  <li><strong>Deep Learning via Fast.AI</strong> - <a href="http://www.comp.nus.edu.sg/~kanmy/courses/6101_2017_2/">http://www.comp.nus.edu.sg/~kanmy/courses/6101_2017_2/</a></li>
+  <li><strong>Deep Learning for Vision</strong> - <a href="http://www.comp.nus.edu.sg/~kanmy/courses/6101_2017/">http://www.comp.nus.edu.sg/~kanmy/courses/6101_2017/</a></li>
+  <li><strong>Deep Learning for NLP</strong> - <a href="http://www.comp.nus.edu.sg/~kanmy/courses/6101_2016_2/">http://www.comp.nus.edu.sg/~kanmy/courses/6101_2016_2/</a></li>
+  <li><strong>MOOC Research</strong> - <a href="http://www.comp.nus.edu.sg/~kanmy/courses/6101_2016/">http://www.comp.nus.edu.sg/~kanmy/courses/6101_2016/</a></li>
+</ul>
+
+        </div>
+      </div>
+    
+
+
+    <div id="footer" class="section text-white">
+      <div class="container">
+        
+        <p>Design forked from 
+<a href="https://github.com/t413/SinglePaged">SinglePaged theme</a>
+by Tim O’Brien <a href="http://t413.com/">t413.com</a></p>
+
+
+      </div>
+    </div>
+  </div>
+
+
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="site.js"></script>
+</html>
