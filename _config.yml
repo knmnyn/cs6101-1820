@@ -20,7 +20,7 @@ description: "This is a section of the CS 6101 Exploration of Computer Science R
 source_link: "http://www.comp.nus.edu.sg/~kanmy/courses/6101_1820"
 favicon:     "img/favicon.ico"
 touch_icon:  "img/apple-touch-icon.png"
-google_analytics_key: 
+google_analytics_key: "UA-9594235-3"
 
 ### template colors, used site-wide via css ###
 colors:
