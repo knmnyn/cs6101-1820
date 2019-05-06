@@ -4,9 +4,36 @@
 
 <p>Thank you to all of the students who worked on the project and finished theirs to completion!  We had a single prize and two runner ups:</p>
 
-<p><strong>Winner</strong>: <a href="http://isteps.comp.nus.edu.sg/event/14th-steps/module/CS6101/project/7">Deep Q Network Flappy Bird</a> by Lee Yong Ler.</p>
+<ol>
+  <li>
+    <p><strong>Deep Q Network Flappy Bird</strong> by Lee Yong Ler.</p>
 
-<p><strong>Runner Up</strong>: <a href="http://isteps.comp.nus.edu.sg/event/14th-steps/module/CS6101/project/2">A curriculum-based approach to learning a universal policy</a> by Bala,  Joash Lee, Kishaloy Halder and Lim Joo Gek.</p>
+    <p><i class="fa fa-trophy"></i>Award Winner, 1st Prize<i class="fa fa-trophy"></i></p>
 
-<p><strong>Runner Up</strong>: <a href="http://isteps.comp.nus.edu.sg/event/14th-steps/module/CS6101/project/8">Imitation Learning</a> by By Liangming Pan, Tan Ying Kiat, Chong Yihui, Goh Yong Liang.</p>
+    <p><a href="posters/flappy_bird.gif"><img src="posters/flappy_bird.gif" class="img-fluid" style="float:left;padding:5px" width="150" /></a>An implementation of a DQN Network to play flappy bird.<br clear="both" /></p>
+  </li>
+  <li>
+    <p><strong>A curriculum-based approach to learning a universal policy</strong> by Prasanna (Bala), Joash Lee, Kishaloy Halder, Lim Joo Gek.</p>
 
+    <p><i class="fa fa-trophy"></i>Runner Up<i class="fa fa-trophy"></i></p>
+
+    <p><a href="posters/curriculum-based RL.png"><img src="posters/curriculum-based RL.png" class="img-fluid" style="float:left;padding:5px" width="150" /></a>Due to a mismatch between simulation and real-world domains (commonly termed the ‘reality gap’), robotic agents trained in simulation often may not perform successfully when transferred to the real-world. This problem may be addressed through domain randomisation, such that a single universal policy is trained to adapt to different environmental dynamics. However, existing methods do not prescribe a priori the order in which tasks are presented to the learner. We present a curriculum-based approach where the difficulty level of training corresponds to the number of variables that are randomised. Experiments are conducted on the inverted pendulum, a classic control problem.<br clear="both" /></p>
+  </li>
+  <li>
+    <p><strong>Imitation Learning</strong> by Liangming Pan, Tan Ying Kiat, Chong Yihui, Goh Yong Liang.</p>
+
+    <p><i class="fa fa-trophy"></i>Runner Up<i class="fa fa-trophy"></i></p>
+
+    <p><a href="posters/imitation_learning.png"><img src="posters/imitation_learning.png" class="img-fluid" style="float:left;padding:5px" width="150" /></a>This project explores reinforcement learning by implementing and deploying imitation learning algorithms such as direct behavior cloning and DAgger. Imitation learning is a branch of reinforcement learning that tries to learn a policy for selecting actions using demonstrations given by an expert. In this project, we explored several reinforcement learning tasks that are simulated by MuJoCo with OpenAI Gym. Direct behavior cloning and DAgger are 2 commonly used algorithms in imitation learning. In direct behavior cloning, we attempted to learn the behavior of an expert policy using a deep neural network that takes in the agent states as inputs and the expert policy’s action as labels. It is observed that this algorithm can work quite well in some tasks such as the Ant task and fail in others. The reason for this is that direct models only learn the recommended actions for states that the expert policy have visited and not states that they will visit themselves. DAgger improves upon this by integrating the demonstration into the learning process.<br clear="both" /></p>
+  </li>
+  <li>
+    <p><strong>Stock Price Prediction with RL</strong> by Ang Shen Ting, Markus Kirchberg.</p>
+
+    <p><a href="posters/stock_price.png"><img src="posters/stock_price.png" class="img-fluid" style="float:left;padding:5px" width="150" /></a>Deep Learning can be used to learn patterns in stock prices and volume, and also to understand news data surrounding stocks. We follow an outline listed by Boris Banushev using Reinforcement Learning to control the hyperparameters of GANs and LSTMs used for predicting stock price movement.<br clear="both" /></p>
+  </li>
+  <li>
+    <p><strong>Model-based Reinforcement Learning</strong> by Lin Qian, Weixin Wang.</p>
+
+    <p><a href="posters/model-based-rl.jpeg"><img src="posters/model-based-rl.jpeg" class="img-fluid" style="float:left;padding:5px" width="150" /></a>Model-based reinforcement learning refers to learning a model of the environmental by taking action and observing the results including the next state and the immediate rewards, and indirectly learning the optimal behavior. The model predicts the outcome of the action and is used to replace or supplement the interaction with the environment to learn the optimal policy. Model-based reinforcement learning consists of two main parts: learning a dynamics model, and using a controller to plan and execute actions that minimize a cost function. In this project, we will explore model-based reinforcement learning in terms of dynamics models and control logics.<br clear="both" /></p>
+  </li>
+</ol>
